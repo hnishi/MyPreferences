@@ -37,4 +37,4 @@ set spec_reflect, 0
 set ray_shadow, 0
 
 
-log_open
+log_open log.pml, mode=a
