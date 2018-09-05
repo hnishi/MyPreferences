@@ -35,3 +35,6 @@ set orthoscopic, 0
 set overlay, 1
 set spec_reflect, 0
 set ray_shadow, 0
+
+
+log_open
