@@ -1,0 +1,80 @@
+# .bashrc
+#export PS1="[\u@hn \W]\\$ "　　#bash prompt
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+
+alias ls='ls --color'
+alias cp='cp -p'
+alias ks='ls'
+alias sl='ls'
+alias l='ls'
+alias la='ls -a'
+alias ll='ls -l'
+alias h='history'
+alias px='ps aux'
+alias exp='python -c '
+
+
+alias raspi='ssh -X -l pi 192.168.100.31 -p 3141' #passwd: raspberry
+
+# private
+alias ssh_gce_1='ssh -l nishigami2509 104.199.144.176 -i ~/.ssh/id_rsa'
+
+export PATH="$PATH":/work1/hnishi/bin_nishi
+export PATH="$PATH":~/.local
+
+# tplgene
+export TPL_DB_PATH=/work01/hnishi/myPresto/tplgene/tplgene/DB
+
+#alias hnishi="cd /media/e/work1/hnishi ;echo pwd: ;pwd"
+alias hnishi="cd /work1/hnishi ;echo pwd: ;pwd"
+#alias hnishi="cd /nfs/ts07-share/userLinux/hnishi;echo pwd: ;pwd"
+alias cd_work1="cd /work1/hnishi ;echo pwd: ;pwd"
+alias cd_work2="cd /media/f/work2"
+alias cd_work3="cd /media/y/userLinux/hnishi/work3/hnishi "
+
+to_trash() {
+    for file in $@
+        do
+            mv $file ~/.Trash
+        done
+}
+#alias rm="to_trash"
+
+alias lt='ls -lt | head -n 15'
+alias l='ls -lat'
+
+function ncalc(){
+  command echo "$1" | bc -l | sed -e 's/^\./0\./' -e 's/-\./-0\./'
+}
+
+function scp_scion(){
+  i=`rev <<< "$1"|cut -d"/" -f 1|rev`; echo yourfile: $i
+  sshpass -f /home/mobaxterm/.ssh/nazo/user.XXX.XXX.XX.XXX ssh -t -t user@XXX.XXX.XX.XXX "scp -pr XXX@XX.XXX.XX.XXXXX.go.jp:$1 /cygdrive/c/Users/user/hnishi/tmp/$i"
+  if [ "$?" -eq 1 ]; then
+    echo "### scion to here failed "
+    sshpass -f /home/mobaxterm/.ssh/nazo/user.XXX.XXX.XX.XXX rsync -cauvP -e ssh $1 user@XXX.XXX.XX.XXX:/cygdrive/c/Users/user/hnishi/tmp/$i
+    sshpass -f /home/mobaxterm/.ssh/nazo/user.XXX.XXX.XX.XXXssh -t -t user@XXX.XXX.XX.XXX "scp -pr /cygdrive/c/Users/user/hnishi/tmp/$i mtateno@fe00.cc.affrc.go.jp:/lfs/mtateno/hnishi/tmp/$i "
+    return 0
+  fi
+  sshpass -f /home/mobaxterm/.ssh/nazo/user.XXX.XXX.XX.XXX rsync -cauvP -e ssh user@XXX.XXX.XX.XXX:/cygdrive/c/Users/user/hnishi/tmp/$i .
+  echo "### success"
+}
+
+
+alias nishirelease='uname -m && cat /etc/*release'
+alias nishigpu='lspci|grep -i nvidia'
+export EDITOR="vim"
+
+#screen
+#chmod 700 /tmp/uscreens/S-hnishi
+
+
+alias pymol="c\:/Program\ Files\ \(x86\)/PyMOL/PyMOL/PymolWin.exe"
+alias gnuplot='/drives/c/Program\ Files/gnuplot/bin/wgnuplot.exe'
+
+
+HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
