@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 #rsync -auP --stats /home/hnishi  /media/usb1
 #rsync -auv /home/hnishi  /media/usb1
