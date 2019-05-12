@@ -17,3 +17,5 @@ export http_proxy=http://XXX.XX.XX:XXXX
 export https_proxy=http://XXX.XX.XX.XX:XXXX
 
 export PATH=/home/hnishi/local/bin:$PATH
+
+export PS1="[\u@\h \W]\\$ "
