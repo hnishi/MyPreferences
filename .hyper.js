@@ -4,6 +4,15 @@
 
 module.exports = {
   config: {
+    
+    // pokemon setting　（プラグイン用）
+    pokemon: 'random',
+    pokecursor: false,
+    pokemonSyntax: 'dark',
+    unibody: false,
+    poketab: true,
+    // pokemon setting end
+    
     // choose either `'stable'` for receiving highly polished,
     // or `'canary'` for less polished but more frequent updates
     updateChannel: 'stable',
@@ -145,14 +154,6 @@ module.exports = {
 
     // for advanced config flags please refer to https://hyper.is/#cfg
   },
-
-    // pokemon setting　（プラグイン用）
-    pokemon: 'random',
-    pokecursor: false,
-    pokemonSyntax: 'dark',
-    unibody: false,
-    poketab: true,
-    // pokemon setting end
 
     opacity: { // プラグイン用
         focus: 0.95,
