@@ -1,6 +1,10 @@
 " hnishi's ~/.vimrc
 " https://qiita.com/reireias/items/230c77b3ff5575832654#_reference-86bfd5c3dfeb524bbb09
 
+set encoding=utf-8
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileformats=unix,dos,mac
+
 syntax on
 "set number
 set expandtab
