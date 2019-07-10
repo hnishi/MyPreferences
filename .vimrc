@@ -33,3 +33,7 @@ set ruler
 set showmatch
 set cursorline
 set encoding=utf-8
+
+" 前回ファイルを保存したカーソルの位置を覚えておく (.vim ディレクトリを事前に作成)
+au BufWritePost * mkview
+autocmd BufReadPost * loadview
