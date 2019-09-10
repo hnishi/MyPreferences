@@ -53,6 +53,12 @@ nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
 " au BufWritePost * mkview
 " autocmd BufReadPost * loadview
 
+" 以下だと今のところ安定している
+augroup vimrcEx
+  au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
+  \ exe "normal g`\"" | endif
+augroup END
+
 """""""""""""""""""""""""
 "      インデント
 " https://qiita.com/ymiyamae/items/06d0f5ce9c55e7369e1f
