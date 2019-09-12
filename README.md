@@ -1,2 +1,3 @@
 # MyPreferences
-My preferences for various software
+
+My preferences for softwares
